@@ -34,7 +34,7 @@ export const uploadFile = (roomId, file, onProgress) => {
 
 export const deleteFile = (roomId, fileId) => API.delete(`/rooms/${roomId}/files/${fileId}`);
 export const downloadFileUrl = (roomId, fileId) =>
-  `/api/rooms/${roomId}/files/${fileId}?token=${encodeURIComponent(roomToken || '')}`;
+  `${API_BASE}/api/rooms/${roomId}/files/${fileId}?token=${encodeURIComponent(roomToken || '')}`;
 
 /* ─── Admin endpoints ─── */
 export const adminLogin = (username, password) => API.post('/admin/login', { username, password });
