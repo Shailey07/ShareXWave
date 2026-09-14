@@ -5,7 +5,8 @@ let socket = null;
 export function connectSocket({ roomId, token, displayName, handlers }) {
   if (socket) socket.disconnect();
 
-  socket = io('/', {
+  const SOCKET_URL = import.meta.env.VITE_API_URL || '/';
+socket = io(SOCKET_URL, {
     transports: ['websocket', 'polling'],
     reconnection: true,
     reconnectionAttempts: 10,
