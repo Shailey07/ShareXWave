@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: '/api' });
+const API_BASE = import.meta.env.VITE_API_URL || '';
+const API = axios.create({ baseURL: `${API_BASE}/api` });
 let roomToken = null;
 let adminToken = null;
 
